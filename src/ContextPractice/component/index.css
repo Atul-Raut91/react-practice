@@ -23,6 +23,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    flex-wrap: wrap;
     margin-top: 1rem;
     margin-left: 1rem;
 }
@@ -30,8 +31,21 @@
 .book-list{
     width: 250px;
     padding: 1rem;
-    text-align: center;
     box-shadow: 2px 2px 10px 3px lightgray;
     border-radius: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
 
 }
+
+.actions {
+    align-self: flex-end;
+}
+
+.actions i {
+    margin: 0 0.3rem;
+    cursor: pointer;
+}
+
+

@@ -3,8 +3,13 @@ import BookContext from "../context/Provider";
 
 function BookCreate() {
   const [title, setTitle] = useState("");
+  const { createBook } = useContext(BookContext);
 
-
+  function onClickHandle(event) {
+    event.preventDefault();
+    createBook(title);
+    setTitle('')
+  }
 
   return (
     <div className="book-create">
@@ -14,14 +19,7 @@ function BookCreate() {
           value={title}
           onChange={(event) => setTitle(event.target.value)}
         />
-        <button
-          onClick={(event) => {
-            event.preventDefault();
-            console.log(title);
-          }}
-        >
-          Submit
-        </button>
+        <button onClick={onClickHandle}>Submit</button>
       </form>
     </div>
   );
